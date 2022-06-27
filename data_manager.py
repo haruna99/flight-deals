@@ -1,7 +1,7 @@
 import requests
-
+import os
 API_URL = "https://api.sheety.co/75b910ec42643eafc84fedae1ff65ac8/flightDeals/prices"
-API_KEY = "tftrf7636^$vuyghuhi2i2guuiyuguuyu"
+API_KEY = os.environ.get("SHEETY_API_KEY")
 headers = {
     "Authorization": f"Bearer {API_KEY}"
 }

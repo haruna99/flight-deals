@@ -2,11 +2,10 @@ import requests
 import datetime as dt
 from pprint import pprint
 from flight_data import FlightData
+import os
 
-API_KEY = "ifiIKN2agrURLyNyVkmtq1fsFEbE3wFm"
-API_ID = "harunaogwedaflightsearch"
+API_KEY = os.environ.get("KIWI_API_KEY")
 API_URL = "https://tequila-api.kiwi.com/"
-API_KEY = "ifiIKN2agrURLyNyVkmtq1fsFEbE3wFm"
 
 headers = {
     "apikey": API_KEY
