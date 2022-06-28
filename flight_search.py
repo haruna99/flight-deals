@@ -55,7 +55,7 @@ class FlightSearch:
                 travel_date=data["route"][0]["local_departure"].split("T")[0],
                 return_date=data["route"][1]["local_departure"].split("T")[0]
             )
-            pprint(f"{flight_data.to_city}: £ {flight_data.price}")
+            pprint(f"{flight_data.to_city}: £{flight_data.price}")
             return flight_data
         except IndexError:
             print(f"No flights found for {to_city}.")

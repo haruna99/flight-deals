@@ -4,6 +4,8 @@ from notification_manager import NotificationManager
 
 data_manager = DataManager()
 sheet_data = data_manager.prices
+users = data_manager.users
+
 
 flight_search = FlightSearch()
 
@@ -20,5 +22,9 @@ for city in sheet_data:
             notification_manager = NotificationManager(
                 flight_data=search_for_flight
             )
-    except AttributeError as message:
-        print(message)
+
+            for user in users:
+                notification_manager.send_emails(user["email"])
+
+    except AttributeError:
+        continue
